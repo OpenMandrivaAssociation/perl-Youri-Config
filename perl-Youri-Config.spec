@@ -1,7 +1,7 @@
 %define module	Youri-Config
 %define name	perl-%{module}
 %define version 0.1.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:		%{name}
 Version:	%{version}
@@ -16,6 +16,7 @@ Buildrequires:	perl-devel
 %endif
 BuildRequires:  perl(YAML::AppConfig)
 BuildRequires:  perl-version
+Requires:       perl-version
 Buildarch:	    noarch
 BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
