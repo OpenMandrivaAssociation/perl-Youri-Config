@@ -1,19 +1,14 @@
-%define module	Youri-Config
-%define name	perl-%{module}
-%define version 0.2.0
-%define release %mkrel 5
+%define upstream_name       Youri-Config
+%define upstream_version    0.2.1
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 Summary:	Youri configuration handler
 License:	GPL or Artistic
 Group:		Development/Other
-Source:		http://youri.zarb.or/download/%{module}-v%{version}.tar.bz2
 Url:		http://youri.zarb.org
-%if %{mdkversion} < 1010
-Buildrequires:	perl-devel
-%endif
+Source:		http://youri.zarb.or/download/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires:  perl(YAML::AppConfig)
 BuildRequires:  perl-version
 Requires:       perl-version
@@ -27,7 +22,7 @@ to build tools making management of a coherent set of packages easier.
 This package provides configuration handling for other youri programs.
 
 %prep
-%setup -q -n %{module}-v%{version}
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
