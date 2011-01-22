@@ -10,6 +10,7 @@ Group:		Development/Other
 Url:		http://youri.zarb.org
 Source:		http://youri.zarb.or/download/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires:  perl(YAML::AppConfig)
+BuildRequires:  perl(Test::Exception)
 BuildRequires:  perl-version
 Requires:       perl-version
 Buildarch:	    noarch
